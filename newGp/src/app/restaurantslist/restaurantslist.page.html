@@ -1,0 +1,438 @@
+<!-- top bar -->
+<ion-header>
+  <ion-toolbar class="topbarsize" color="medium">
+
+    <!-- back icon -->
+    <ion-button href="/homepage" size="small" color="Tertiary" slot="start">
+      <ion-icon color="dark" name="arrow-back"></ion-icon>
+    </ion-button>
+
+    <!-- menu icon -->
+    <ion-buttons slot="end">
+      <ion-menu-button color="dark"></ion-menu-button>
+    </ion-buttons>
+
+    <h3 text-center> المطاعم </h3>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="background-image">
+
+  <!-- search -->
+  <ion-searchbar showCancelButton="always" (ionInput)=" FilterJSONData($event) ">
+  </ion-searchbar>
+
+  <ion-card class="scroll-content">
+
+
+    <!-- مطاعم شعبية -->
+    <ion-button (click)="appearlist1()" expand="full" color="dark">
+      <h3> مطاعم شعبية </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم شعبية-------------------------------------- -->
+
+    <!-- 1 -->
+    <div *ngIf="listshow1">
+
+      <ion-list *ngFor="let item4 of json4Data">
+        <img class="act1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfZPqHUmX5s15fR8b-M9IFYSOEwt9d9djBAp9F_ydffzV2Q2BB">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item4.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list *ngFor="let item5 of json5Data">
+        <img class="act1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIMXJi9lhrqMVTG0Fh5teC5AT7Zp52EOaimB92dzAFCrl9jnpk">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item5.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item6.name)" *ngFor="let item6 of json6Data">
+        <img class="act1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrdWzwhezpJwjeBRdKJOeCbtrjm8FcSkIXFcC0iJTLbWeYQH8w">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item6.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- <ion-button (click)="noappearlist1()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button> -->
+
+    </div>
+
+    <!-- ---------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم هندية -->
+    <ion-button (click)="appearlist2()" expand="full" color="dark">
+      <h3> مطاعم هندية </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم هندية---------------------------------------- -->
+
+    <div *ngIf="listshow2">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item.name)" *ngFor="let item of jsonData"> <img class="act1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR7rM_YTzDt51nej0fuaF8Wu1KfkLx6kDpFc4P5fIfYPyxcXLz1">
+        <div text-left>
+          <ion-button href="/alsayfalhendirest" expand="block" color="medium" size="small">
+            {{item.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item2.name)" *ngFor="let item2 of json2Data">
+        <img class="act1" src="https://live.staticflickr.com/7006/6726246177_6d84d63bb3_b.jpg">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item2.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item3.name)" *ngFor="let item3 of json3Data">
+        <img class="act1"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXkpEhnSX6k1E0TDXlpYpamji36WVFczb-_97x36l8dkS9g2QY">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item3.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist2()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+
+    <br>
+
+    <!-- مطاعم ايطالية -->
+    <ion-button (click)="appearlist3()" expand="full" color="dark">
+      <h3> مطاعم ايطالية </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم ايطالية---------------------------------------- -->
+
+    <div *ngIf="listshow3">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgTl4wwBpzSc8impDq7hsPqsHO2rpQ7MWN7ZrWyX8kt4xEhj1A&s">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item7.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVQijHy98X1Mmbi0qohoYhsOpgG-96FwOtQok15Ze90dr86TQx&s">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item8.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLqA6Ds1CTpk-WB3UYCOux0HpmDPntb63zuRlRKeGGBfGZu1WA9g&s">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item9.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist3()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم فرنسية -->
+    <ion-button (click)="appearlist4()" expand="full" color="dark">
+      <h3> مطاعم فرنسية </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم فرنسية---------------------------------------- -->
+
+    <div *ngIf="listshow4">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item10.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item11.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item12.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist4()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم وجبات سريعة -->
+    <ion-button (click)="appearlist5()" expand="full" color="dark">
+      <h3> مطاعم وجبات سريعة </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم وجبات سريعة---------------------------------------- -->
+
+    <div *ngIf="listshow5">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item7.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item8.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item9.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist5()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم سوشي -->
+    <ion-button (click)="appearlist6()" expand="full" color="dark">
+      <h3> مطاعم سوشي </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم سوشي---------------------------------------- -->
+
+    <div *ngIf="listshow6">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item7.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item8.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item9.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist6()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم مشاوي -->
+    <ion-button (click)="appearlist7()" expand="full" color="dark">
+      <h3> مطاعم مشاوي </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم مشاوي---------------------------------------- -->
+
+    <div *ngIf="listshow7">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item7.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item8.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item9.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist7()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+    <br>
+
+    <!-- مطاعم الأكلات البحرية -->
+    <ion-button (click)="appearlist8()" expand="full" color="dark">
+      <h3> مطاعم الأكلات البحرية </h3>
+    </ion-button>
+
+    <!-- -------------------------------------------مطاعم الأكلات البحرية---------------------------------------- -->
+
+    <div *ngIf="listshow8">
+      <!-- 1 -->
+      <ion-list (click)="selectVal(item7.name)" *ngFor="let item7 of json7Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item7.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 2 -->
+      <ion-list (click)="selectVal(item8.name)" *ngFor="let item8 of json8Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item8.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <!-- 3 -->
+      <ion-list (click)="selectVal(item9.name)" *ngFor="let item9 of json9Data">
+        <img class="act1" src="">
+        <div text-left>
+          <ion-button expand="block" color="medium" size="small">
+            {{item9.name}}
+          </ion-button>
+        </div>
+      </ion-list>
+
+      <ion-button (click)="noappearlist8()" expand="full" color="dark">
+        <h3> اخفاء </h3>
+      </ion-button>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------- -->
+
+
+  </ion-card>
+
+</ion-content>
+
+<!-- bottom bar-->
+<ion-footer>
+  <ion-toolbar slot="bottom" color="medium">
+
+    <ion-button slot="start" color="Tertiary" href="/myactivities">
+      <ion-icon name="list" color="dark"></ion-icon>
+      <ion-label color="dark">أنشطتي</ion-label>
+    </ion-button>
+
+    <div text-center>
+      <ion-button href="/myfavorite" color="Tertiary">
+        <ion-icon name="star" color="dark"> </ion-icon>
+        <ion-label color="dark">مفضلتي</ion-label>
+      </ion-button>
+    </div>
+
+    <ion-button slot="end" color="Tertiary" href="/homepage">
+      <ion-icon name="home" color="dark"></ion-icon>
+      <ion-label color="dark">الرئيسية</ion-label>
+    </ion-button>
+
+  </ion-toolbar>
+</ion-footer>

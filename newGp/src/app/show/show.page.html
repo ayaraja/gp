@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- 
+    <ion-list>
+   
+     
+        <ion-item-sliding >
+  
+            <ion-item>
+                <ion-label>
+                    الاسم:  {{ data.name }}
+                    </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+              النوع:  {{ data.vistor_Type }}
+              </ion-label>
+            </ion-item>
+            <br>
+            <ion-item>
+                <ion-label>
+                النوع:  {{ data.vistor_Type1 }}
+                </ion-label>
+              </ion-item>
+            <ion-item>
+              <ion-label> 
+              وقت الافتتاح:  {{ data.Time_start }}
+              </ion-label>
+            </ion-item>
+              <br>
+              <ion-item>
+              <ion-label>
+                 وقت الاغلاق :{{ data.Time_end }}
+              </ion-label>
+            </ion-item>
+            <br>
+            <ion-item>
+            <ion-label>
+               نوع الجلسة :{{ data.type_j }}
+            </ion-label>
+          </ion-item>
+       
+          </ion-item-sliding>
+       
+        </ion-list>
+       <ion-img [src]="data.img"></ion-img>  -->
+        
+<!--      
+    <ion-list>
+      <div *ngIf="items$ | async; let items; else loading">
+        <ul>
+          <li *ngFor="let item of items">
+{{item.name}}
+
+          </li>
+        </ul>
+        <div *ngIf="items.length === 0">No results, try clearing filters</div>
+
+      </div>
+      <ng-template #loading>Loading&hellip;</ng-template> 
+      
+    </ion-list>  -->
+  
+    <ion-list>
+      <div *ngIf="items$ | async; let items; else loading">
+        <ul>
+          <li *ngFor="let item of items">
+
+            <button shape="round" color="medium" (click)="openDetailsWithQueryParams(item)">انشاء</button>
+
+          </li>
+        </ul>
+        <div *ngIf="items.length === 0">No results, try clearing filters</div>
+
+      </div>
+      <ng-template #loading>Loading&hellip;</ng-template> 
+      
+    </ion-list>
+        <ion-button  (click)="test()"shape="round" color="medium"> انشاء </ion-button>
+
+<button></button>
+</ion-content>
